@@ -173,8 +173,9 @@ async function saveResult(name, score) {
 // ランキング表示
 async function showRanking() {
   const rankingEl = document.getElementById("ranking");
+  const kotae = document.getElementById("kotae");
   rankingEl.innerHTML = "<h3>ランキング</h3>";
-
+  
   const snapshot = await getDocs(collection(db, "rankings"));
   const scores = [];
   snapshot.forEach(doc => scores.push(doc.data()));
@@ -189,6 +190,7 @@ async function showRanking() {
     list.appendChild(li);
   });
   rankingEl.appendChild(list);
+  kotae.innerHTML = "<p>おとの色は？</p><p>おとがハンターハンターで一番好きなところは？</p><p>グリードアイランド</p><p>おとのなまえといえば</p><p>おぽ</p><p>おとの一番好きな食べ物は？</p><p>ラーメン</p><p>おとの攻撃といえば？</p><p>ショットガン</p><p>おとのスマホの写真フォルダの最初にあるのは？</p><p>せいやがバターを踊る動画</p><p>おとには公式ラインがある？</p><p>ある</p><p>おとの今曲は？</p><p>snooze</p><p>おとは2023年のカヤックで最後の方どこがかゆくなった？</p><p>おしり</p><p>おとがmvに出演してる曲のコンセプトは？</p><p>うんこ</p><p>おとのtシャツの柄といえば？</p><p>バナナ</p><p>おとはニュージーランドでパンツだけで家の周りを走った。何周？</p><p>3</p>"
 }
 
 // ランキングのみ表示
