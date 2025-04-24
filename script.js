@@ -186,7 +186,7 @@ async function showRanking() {
   const list = document.createElement("ol");
   top10.forEach(entry => {
     const li = document.createElement("li");
-    li.textContent = `${entry.name}：${entry.score}点`;
+    li.textContent = `${entry.name}：${entry.score}点 + "/12点"`;
     list.appendChild(li);
   });
   rankingEl.appendChild(list);
